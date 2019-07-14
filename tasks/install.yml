@@ -1,0 +1,4 @@
+- name: Install cron
+  package:
+    name: "{{ cron_pkg }}{% if cron_version %}-{{ cron_version }}{% endif %}"
+    state: present

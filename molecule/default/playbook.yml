@@ -1,0 +1,15 @@
+- hosts: all
+  roles:
+    - role: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') | basename }}"
+      cron_envs:
+        - name: VERSION
+          cron_file: test
+          value: 1
+      cron_jobs:
+        - name: every hour
+          job: "echo hey"
+          minute: 0
+        - name: every week
+          cron_file: test
+          job: "echo hey"
+          weekday: 1

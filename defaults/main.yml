@@ -1,0 +1,20 @@
+# Version to be installed
+cron_version: "{{ cron_default_version }}"
+
+# Whether to enable daemon
+cron_enabled: true
+
+# List of cron envs
+cron_envs:
+  - backup: false
+    cron_file: test
+    #    user: root
+    name: PATH
+    value: /bin
+
+# List of cron jobs
+cron_jobs: []
+
+# Defaults
+cron_default_backup: "{{ omit }}"
+cron_default_user: "root"

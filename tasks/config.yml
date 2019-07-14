@@ -1,0 +1,29 @@
+- name: Configure envs
+  cron:
+    backup: "{{ item.backup | default(cron_default_backup) }}"
+    cron_file: "{{ item.cron_file | default(omit) }}"
+    env: true
+    insertafter: "{{ item.insertafter | default(omit) }}"
+    insertbefore: "{{ item.insertbefore | default(omit) }}"
+    value: "{{ item.value | default(omit) }}"
+    name: "{{ item.name | default(omit) }}"
+    user: "{{ item.user | default(cron_default_user) }}"
+    state: "{{ item.state | default(omit) }}"
+  loop: "{{ cron_envs }}"
+
+- name: Configure jobs
+  cron:
+    backup: "{{ item.backup | default(cron_default_backup) }}"
+    cron_file: "{{ item.cron_file | default(omit) }}"
+    day: "{{ item.day | default(omit) }}"
+    disabled: "{{ item.disabled | default(omit) }}"
+    hour: "{{ item.hour | default(omit) }}"
+    job: "{{ item.job | default(omit) }}"
+    minute: "{{ item.minute | default(omit) }}"
+    month: "{{ item.month | default(omit) }}"
+    name: "{{ item.name | default(omit) }}"
+    special_time: "{{ item.special_time | default(omit) }}"
+    state: "{{ item.state | default(omit) }}"
+    user: "{{ item.user | default(cron_default_user) }}"
+    weekday: "{{ item.weekday | default(omit) }}"
+  loop: "{{ cron_jobs }}"

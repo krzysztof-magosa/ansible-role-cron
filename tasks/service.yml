@@ -1,0 +1,6 @@
+- name: Set service state
+  service:
+    name: "{{ item }}"
+    enabled: "{{ cron_enabled }}"
+    state: "{{ cron_enabled | ternary('started', 'stopped') }}"
+  loop: "{{ cron_services }}"

@@ -1,0 +1,22 @@
+- import_tasks: variables.yml
+  tags:
+    - cron
+    - cron_variables
+    - cron_install
+    - cron_config
+    - cron_service
+
+- import_tasks: install.yml
+  tags:
+    - cron
+    - cron_install
+
+- import_tasks: config.yml
+  tags:
+    - cron
+    - cron_config
+
+- import_tasks: service.yml
+  tags:
+    - cron
+    - cron_service
