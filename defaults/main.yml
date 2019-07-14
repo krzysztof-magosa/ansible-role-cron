@@ -5,14 +5,38 @@ cron_version: "{{ cron_default_version }}"
 cron_enabled: true
 
 # List of cron envs
+# See https://docs.ansible.com/ansible/latest/modules/cron_module.html
+# Supported parameters:
+#  - backup
+#  - cron_file
+#  - insertafter
+#  - insertbefore
+#  - value
+#  - name
+#  - user
+#  - state
 cron_envs:
   - backup: false
     cron_file: test
-    #    user: root
     name: PATH
     value: /bin
 
 # List of cron jobs
+# See https://docs.ansible.com/ansible/latest/modules/cron_module.html
+# Supported parameters:
+#  - backup
+#  - cron_file
+#  - day
+#  - disabled
+#  - hour
+#  - job
+#  - minute
+#  - month
+#  - name
+#  - special_time
+#  - state
+#  - user
+#  - weekday
 cron_jobs: []
 
 # Defaults
