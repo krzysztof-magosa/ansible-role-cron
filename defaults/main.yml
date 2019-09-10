@@ -15,11 +15,7 @@ cron_enabled: true
 #  - name
 #  - user
 #  - state
-cron_envs:
-  - backup: false
-    cron_file: test
-    name: PATH
-    value: /bin
+cron_envs: []
 
 # List of cron jobs
 # See https://docs.ansible.com/ansible/latest/modules/cron_module.html
